@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#Created by @Rainsec, follow on Twitter :D
+#Created by @Rainsec_
 
-# MUST READ!!!!!!!!!!!
+# MUST READ!!!!!!!!
 
 	# If you have a custom wordlist of users you've found, rename  this file names.txt in the CURRENT WORKING DIRECTORY
 	# If you do not have a custom wordlist of known users, this script will dump users from LDAP database and proceed
@@ -19,7 +19,7 @@
 
 
 
-echo "====== Looping All Users for kerberoast  ====== "
+echo "====== Looping All Users for AS-REP roast  ====== "
 
 
 sleep 2
@@ -71,7 +71,7 @@ file=names.txt
 if  test -f $file ;
 then
 
-echo "Found  names.txt, looping for kerberoast now "
+echo "Found  names.txt, looping for AS-REP now "
 echo "============"
 echo " "
 
@@ -79,7 +79,7 @@ else
 echo "------- names.txt not found - Let script proceed"
 fi
 
-echo " Trying NO password to kerberoast "
+echo " Trying NO password to AS-REProast "
 sleep 2
 
 if  test -f $file ;
@@ -95,7 +95,7 @@ fi
 
 sleep 2
 
-echo " Trying username as password to kerberoast "
+echo " Trying username as password to AS-REProast "
 sleep 3
 
 
@@ -116,11 +116,11 @@ ldapsearch -x -h $target -b $value | grep -i samaccountname | cut -d ':' -f2  > 
 
 sleep 2
 
-echo "Generated names.txt, looping for kerberoast now "
+echo "Generated names.txt, looping for  now "
 echo "============"
 echo " "
 
-echo " Trying NO password to kerberoast "
+echo " Trying NO password to AS-REProast "
 sleep 3
 
 
