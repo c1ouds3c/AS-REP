@@ -1,22 +1,14 @@
 #!/bin/bash
 
-#Created by @Rainsec_
-
-# MUST READ!!!!!!!!
+# MUST READ
 
 	# If you have a custom wordlist of users you've found, rename  this file names.txt in the CURRENT WORKING DIRECTORY
 	# If you do not have a custom wordlist of known users, this script will dump users from LDAP database and proceed
 	# This script does not stop once a TGT ticket has been found, so you will have to manually stop the script or let it run
-	# Ctrl + C will end the script for those who are unaware :)
-	
-	# Also, this will display a lot of fast paced output so it invovles some eyeballing unless you wish to let it run and scroll back and
-	# read. 
+	# Ctrl + C will end the script. Too lazy to add a fix to stop on success.
 	# If a TGT ticket has not been returned, look for other responses, it does not necessarily mean these creds looping didn't work
 	# `No entries found!` Can also mean the creds worked but no TGT could be retrieved. If this is the case, take note of the 
 	# user:pass combo (no pass or user:user combination) and try these same creds on smbclient or evilWinRM 
-
-	#If this script fails, then perhaps you're missing a password somewhere on the CTF or a crucial username elsewhere
-
 
 
 echo "====== Looping All Users for AS-REP roast  ====== "
